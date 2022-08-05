@@ -1,7 +1,8 @@
 import csv
 data = []
-findHiddenLikes = True
-credentials = "purtimurti99"
+findHiddenLikes = False
+credentials = "igor_metrica"
+import time
 
 def getLikes(posts):
 
@@ -27,9 +28,13 @@ def getLikes(posts):
               for iteration, item in enumerate(likers):
                 likes+=1
                 print(item.username)
+                time.sleep(.25)
               print("        - Current Likes: ", likes)
+            
             except:
               pass
+
+            time.sleep(30)
             
           else:
             likes += post.likes
@@ -40,7 +45,7 @@ def getLikes(posts):
           break
           break
           
-      else:
+      else: # don't find hidden likes
 
         if not findHiddenLikes:
 
@@ -57,7 +62,7 @@ def getLikes(posts):
           else:
             break
             break
-
+    
   except:
     pass
     
